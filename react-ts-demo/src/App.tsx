@@ -28,9 +28,29 @@ function App() {
     else return <p>再见</p>;
   }
 
+  const list = [
+    { username: "zhangsan", name: "张三" },
+    { username: "lisi", name: "李四" },
+    { username: "shuangyue", name: "双越" },
+  ];
+
+  const ul = (
+    <ul>
+      {list.map((user) => {
+        return <li key={user.username}>{user.name}</li>;
+      })}
+    </ul>
+  );
+
   return (
     <div className="App">
       <header className="App-header">
+        {ul}
+        <ul>
+          {list.map((user) => {
+            return <li key={user.username}>{user.name}</li>;
+          })}
+        </ul>
         {Hello()}
         <Hello></Hello>
         {flag && <div>hello</div>}

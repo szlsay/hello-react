@@ -108,6 +108,27 @@ function Hello() {
 return <Hello></Hello>
 ```
 
+### 循环
+使用 map 做循环
+```
+  const list = [
+    { username: 'zhangsan', name: '张三' },
+    { username: 'lisi', name: '李四' },
+    { username: 'shuangyue', name: '双越' },
+  ]
+
+  const ul = <ul>
+    {list.map(user => {
+        return <li key={user.username}>{user.name}</li>
+    })}
+  </ul>
+```
+JSX 循环必须有 key - 帮助 React 识别哪些元素改变了，比如被添加或删除。
+
+同级别 key 必须唯一
+key 是不可改变的 —— 尽量不用 index ，要用业务 ID （也不要用随机数）
+key 用于优化 VDOM diff 算法（后面再说）
+
 ## vite安装
 https://cn.vitejs.dev/
 

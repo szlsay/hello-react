@@ -13,6 +13,33 @@ class 要改为 className
 style 要写成 JS 对象（不能是 string），key 采用驼峰写法
 for 要改为 htmlFor
 
+事件
+onXxx 的形式
+
+注意 TS 的写法
+```
+function clickHandler(event: React.MouseEvent<HTMLParagraphElement>) {
+    event.preventDefault()
+    console.log('clicked')
+}
+
+return <p onClick={clickHandler}>hello world</p>
+```
+如果要想传递参数，可以通过如下方式
+```
+  function clickHandler(event: React.MouseEvent<HTMLParagraphElement>, x: string) {
+    event.preventDefault()
+    console.log('clicked', x)
+  }
+
+  return (
+    <p onClick={(e: React.MouseEvent<HTMLParagraphElement>) => clickHandler(e, 'hello')}>
+        hello world
+    </p>
+  )
+ ```
+PS：Event handlers must be passed, not called! onClick={handleClick}, not onClick={handleClick()}.
+
 ## vite安装
 https://cn.vitejs.dev/
 

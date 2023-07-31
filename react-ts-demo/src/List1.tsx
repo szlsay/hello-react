@@ -1,6 +1,8 @@
 import React, {FC} from "react";
 // import type { FC } from 'react'
-import "./List1.css";
+// import "./List1.css";
+
+import QuestionCard from './components/QuestionCard'
 const List1: FC = () => {
     // 问卷列表数据
     const questionList = [
@@ -15,20 +17,22 @@ const List1: FC = () => {
     }
   return (
     <div>
-    {questionList.map((item) => {
-      return (
-        <div key={item.id} className="list-item">
-          <strong>{item.title}</strong>
-          {item.isPublished ? <span>已发布</span> : <span>未发布</span>}
-          <button
-            onClick={() => {
-              edit(item.id);
-            }}
-          >
-            编辑{" "}
-          </button>
-        </div>
-      );
+    {questionList.map((question) => {
+        const { id, title, isPublished } = question
+      return <QuestionCard key={id} id={id} title={title} isPublished={isPublished} />
+      // return (
+      //   <div key={item.id} className="list-item">
+      //     <strong>{item.title}</strong>
+      //     {item.isPublished ? <span>已发布</span> : <span>未发布</span>}
+      //     <button
+      //       onClick={() => {
+      //         edit(item.id);
+      //       }}
+      //     >
+      //       编辑{" "}
+      //     </button>
+      //   </div>
+      // );
     })}
   </div>
   )

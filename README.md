@@ -81,6 +81,33 @@ console.log(foo1.info)
 属性值
 用于注释
 
+
+### 判断
+JS 一般使用 if...else 做判断，但不能用于 JSX 的 {xxx} 中。
+
+所以，可以选择其他方式做判断
+
+运算符 &&
+三元表达式 a ? b : c
+用函数封装
+```
+const flag = true
+return <div>
+    {flag && <p>hello</p>}
+    {flag ? <p>你好</p> : <p>再见</p>}
+</div>
+```
+
+或者用函数封装
+```
+function Hello() {
+    if (flag) return <p>你好</p>
+    else return <p>再见</p>
+}
+
+return <Hello></Hello>
+```
+
 ## vite安装
 https://cn.vitejs.dev/
 

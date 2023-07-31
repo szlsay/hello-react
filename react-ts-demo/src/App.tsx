@@ -26,7 +26,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>{logo}</p>
         <span>{a}</span>
+        {/* 注释 */}
+        <p>{true ? 'a' : 'b'}</p>
         <p>
           Edit <code>src/App.tsx</code> and save to reload stapp.
         </p>

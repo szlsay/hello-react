@@ -73,6 +73,14 @@ console.log(foo1.info)
 // foo1.setInfo('ui') // 报错
 // console.log(foo1.info)
 ```
+
+### JS 表达式
+{xxx} 格式表示一个 JS 变量或表达式，可用于
+
+普通文本内容，或判断、循环
+属性值
+用于注释
+
 ## vite安装
 https://cn.vitejs.dev/
 

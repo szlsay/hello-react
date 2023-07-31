@@ -17,6 +17,7 @@ function clickGreenFun(value: string) {
 }
 
 function clickBlueFun(event: React.MouseEvent<HTMLParagraphElement>, value: string) {
+  event.preventDefault()
   console.log('clickBlueFun', event, value)
 }
 function App() {

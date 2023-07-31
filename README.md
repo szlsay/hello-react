@@ -40,6 +40,39 @@ return <p onClick={clickHandler}>hello world</p>
  ```
 PS：Event handlers must be passed, not called! onClick={handleClick}, not onClick={handleClick()}.
 
+## TS练习
+https://www.tslang.cn/play/index.html
+
+```
+const str: string = "123";
+
+function fn(a: number, b: number) { 
+    return a + b;
+}
+
+console.log(fn(10, 20))
+
+function print<T>(info: T) { 
+    console.log(info)
+}
+
+print(12)
+print("we")
+
+class Foo <T> { 
+    info: T
+    setInfo(newInfo: T) { 
+        this.info = newInfo
+    }
+}
+
+const foo1: Foo<number> = new Foo()
+foo1.setInfo(12)
+console.log(foo1.info)
+
+// foo1.setInfo('ui') // 报错
+// console.log(foo1.info)
+```
 ## vite安装
 https://cn.vitejs.dev/
 

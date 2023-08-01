@@ -11,6 +11,7 @@ import "./App.css";
 // import useMouse from "./hooks/useMouse";
 // import useGetInfo from "./hooks/useGetInfo";
 
+import ClosureTrap from "./ClosureTrap";
 import { useTitle } from "ahooks";
 function App() {
   // useTitle("App page")
@@ -27,6 +28,7 @@ function App() {
       {/* <UseCallbackDemo></UseCallbackDemo> */}
       {/* <p>{x} {y}</p> */}
       {/* <p>{loading ? 'loading' : info}</p> */}
+      <ClosureTrap></ClosureTrap>
     </div>
   );
 }

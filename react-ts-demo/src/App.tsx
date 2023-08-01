@@ -9,9 +9,11 @@ import UseMemoDemo from "./UseMemoDemo";
 import UseCallbackDemo from "./UseCallbackDemo";
 import useTitle from "./hooks/useTitle";
 import useMouse from "./hooks/useMouse";
+import useGetInfo from "./hooks/useGetInfo";
 function App() {
-  useTitle("App page")
-  const {x, y} = useMouse()
+  // useTitle("App page")
+  // const {x, y} = useMouse()
+  // const {loading, info} = useGetInfo();
   return (
     <div className="App">
       {/* <List1></List1> */}
@@ -20,7 +22,8 @@ function App() {
       {/* <UseRefDemo></UseRefDemo> */}
       {/* <UseMemoDemo></UseMemoDemo> */}
       {/* <UseCallbackDemo></UseCallbackDemo> */}
-      <p>{x} {y}</p>
+      {/* <p>{x} {y}</p> */}
+      {/* <p>{loading ? 'loading' : info}</p> */}
     </div>
   );
 }

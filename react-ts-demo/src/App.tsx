@@ -6,6 +6,7 @@ import List2 from "./List2";
 import Immer1 from "./Immer1";
 import UseRefDemo from "./UseRefDemo";
 import UseMemoDemo from "./UseMemoDemo";
+import UseCallbackDemo from "./UseCallbackDemo";
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,8 @@ function App() {
       {/* <List2></List2> */}
       {/* <Immer1></Immer1> */}
       {/* <UseRefDemo></UseRefDemo> */}
-      <UseMemoDemo></UseMemoDemo>
+      {/* <UseMemoDemo></UseMemoDemo> */}
+      <UseCallbackDemo></UseCallbackDemo>
     </div>
   );
 }

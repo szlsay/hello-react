@@ -42,11 +42,18 @@ const QuestionCard: FC<PropsTypeST> = props => {
   //   published: isPublished,
   // })
 
-  const listItemClass = styles['list-item']
-  const publishedClass = styles.published
+  // const listItemClass = styles['list-item']
+  // const publishedClass = styles.published
+  // const itemClassName = classnames({
+  //   [listItemClass]: true,
+  //   [publishedClass]: isPublished,
+  // })
+
+  const listClass = styles['list-item']
+  const publishClass = styles['published']
   const itemClassName = classnames({
-    [listItemClass]: true,
-    [publishedClass]: isPublished,
+    [listClass]: true,
+    [publishClass]: isPublished
   })
 
   return (

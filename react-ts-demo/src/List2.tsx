@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 // import type { FC } from 'react'
 // import "./List1.css";
-
+import { produce } from "immer";
 import QuestionCard from "./components/QuestionCard";
 const List2: FC = () => {
   // // 问卷列表数据
@@ -23,24 +23,43 @@ const List2: FC = () => {
     // setQuestionList.filter((q) => {
     //   return q.id !== id;
     // });
-    setQuestionList(questionList.filter((q) => q.id !== id));
+    // setQuestionList(questionList.filter((q) => q.id !== id));
+    setQuestionList(
+      produce((draft) => {
+        const index = draft.findIndex((q) => q.id === id);
+        draft.splice(index, 1);
+      })
+    );
   };
 
   const addQuestion = () => {
     const r = Math.random().toString().slice(-3);
-    setQuestionList([
-      ...questionList,
-      { id: "q" + r, title: "问卷" + r, isPublished: false },
-    ]);
+    // setQuestionList([
+    //   ...questionList,
+    //   { id: "q" + r, title: "问卷" + r, isPublished: false },
+    // ]);
+    setQuestionList(
+      produce((draft) => {
+        draft.push({ id: "q" + r, title: "好的问卷" + r, isPublished: false });
+      })
+    );
   };
 
   const publishQuestion = (id: string) => {
+    // setQuestionList(
+    //   questionList.map((q) => {
+    //     if (q.id === id) {
+    //       q.isPublished = true;
+    //     }
+    //     return q;
+    //   })
+    // );
     setQuestionList(
-      questionList.map((q) => {
-        if (q.id === id) {
-          q.isPublished = true;
+      produce((draft) => {
+        const question = draft.find((q) => q.id === id);
+        if (question) {
+          question.isPublished = true;
         }
-        return q;
       })
     );
   };

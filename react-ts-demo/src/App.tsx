@@ -7,7 +7,9 @@ import Immer1 from "./Immer1";
 import UseRefDemo from "./UseRefDemo";
 import UseMemoDemo from "./UseMemoDemo";
 import UseCallbackDemo from "./UseCallbackDemo";
+import useTitle from "./hooks/useTitle";
 function App() {
+  useTitle("App page")
   return (
     <div className="App">
       {/* <List1></List1> */}
@@ -15,7 +17,7 @@ function App() {
       {/* <Immer1></Immer1> */}
       {/* <UseRefDemo></UseRefDemo> */}
       {/* <UseMemoDemo></UseMemoDemo> */}
-      <UseCallbackDemo></UseCallbackDemo>
+      {/* <UseCallbackDemo></UseCallbackDemo> */}
     </div>
   );
 }

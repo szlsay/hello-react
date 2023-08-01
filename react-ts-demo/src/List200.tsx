@@ -1,16 +1,10 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 // import type { FC } from 'react'
 // import "./List1.css";
 import { produce } from "immer";
 import QuestionCard from "./components/QuestionCard";
 const List2: FC = () => {
-  useEffect(() => {
-    console.log("加载 ajax 网络请求");
-    return () => {
-      console.log("销毁");
-    };
-  }, []); // 无依赖，组件初次渲染时执行
-
+  console.log("加载List2")
   // // 问卷列表数据
   // const questionList = [
   //   { id: "q1", title: "问卷1", isPublished: false },
@@ -25,13 +19,6 @@ const List2: FC = () => {
     { id: "q3", title: "问卷3", isPublished: false },
     { id: "q4", title: "问卷4", isPublished: true },
   ]);
-
-  useEffect(() => {
-    console.log("加载questionList");
-    return () => {
-      console.log("销毁questionList");
-    };
-  }, [questionList]);
 
   const deleteQuestion = (id: string) => {
     // setQuestionList.filter((q) => {

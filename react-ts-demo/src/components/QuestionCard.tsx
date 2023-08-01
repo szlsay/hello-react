@@ -24,15 +24,13 @@ const QuestionCard: FC<PropsTypeST> = props => {
     deleteQuestion && deleteQuestion(id)
   }
 
-  // useEffect(() => {
-  //   console.log('question card mounted')
-
-  //   return () => {
-  //     console.log('question card unmounted', id) // 销毁
-  //   }
-
-  //   // 生命周期：创建，更新（state 变化），销毁
-  // }, [])
+  useEffect(() => {
+    console.log('question card mounted')
+    return () => {
+      console.log('question card unmounted', id) // 销毁
+    }
+    // 生命周期：创建，更新（state 变化），销毁
+  }, [id])
 
   // let itemClassName = 'list-item'
   // if (isPublished) itemClassName += ' published'

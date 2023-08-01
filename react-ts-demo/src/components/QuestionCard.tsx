@@ -8,7 +8,7 @@ type PropsTypeST = {
   id: string
   title: string
   isPublished: boolean
-  deleteQuestion?: (id: string) => void
+  deleteQuestion?: (id: string) => void // ?可选
   publishQuestion?: (id: string) => void
 }
 

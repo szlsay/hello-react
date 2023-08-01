@@ -1,14 +1,18 @@
-// import State01 from "./State01"
+import React from "react";
 
-import State02 from "./State02"
+import "./App.css";
+import List1 from "./List1";
+import List2 from "./List2";
 
 function App() {
+
+
   return (
-    <>
-    {/* <State01></State01> */}
-    <State02></State02>
-    </>
-  )
+    <div className="App">
+      {/* <List1></List1> */}
+      <List2></List2>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -6,74 +6,76 @@ const Demo: FC = () => {
   //   setGender(event.target.value);
   // }
 
-  // function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
-  //   event.preventDefault(); // 组织默认行为
-  //   // JS 自己提交数据
-
-  const [text, setText] = useState<string>("hello");
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setText(event.target.value);
+  function handleSubmit(event: ChangeEvent<HTMLFormElement>) {
+    console.log(event.target.value);
+    // event.preventDefault(); // 组织默认行为
+    // JS 自己提交数据
   }
 
-  function handleTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setText(event.target.value);
-  }
+  // const [text, setText] = useState<string>("hello");
+  // function handleChange(event: ChangeEvent<HTMLInputElement>) {
+  //   setText(event.target.value);
+  // }
 
-  function genHtml() {
-    return { __html: text.replaceAll("\n", "<br>") };
-  }
+  // function handleTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
+  //   setText(event.target.value);
+  // }
 
-  const [lang, setLang] = useState("js");
-  function handleSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    setLang(event.target.value);
-  }
+  // function genHtml() {
+  //   return { __html: text.replaceAll("\n", "<br>") };
+  // }
 
-  const [checked, setChecked] = useState(false);
-  function toggleChecked() {
-    setChecked(!checked);
-  }
+  // const [lang, setLang] = useState("js");
+  // function handleSelectChange(event: ChangeEvent<HTMLSelectElement>) {
+  //   setLang(event.target.value);
+  // }
 
-  const [selectedCityList, setSelectedCityList] = useState<string[]>([]);
-  function handleCityChange(event: ChangeEvent<HTMLInputElement>) {
-    const city = event.target.value;
+  // const [checked, setChecked] = useState(false);
+  // function toggleChecked() {
+  //   setChecked(!checked);
+  // }
 
-    // state 不可变数据
-    if (selectedCityList.includes(city)) {
-      // 移除
-      setSelectedCityList(
-        selectedCityList.filter((c) => {
-          if (c === city) return false;
-          return true;
-        })
-      );
-    } else {
-      // 添加
-      setSelectedCityList(selectedCityList.concat(city));
-    }
-  }
+  // const [selectedCityList, setSelectedCityList] = useState<string[]>([]);
+  // function handleCityChange(event: ChangeEvent<HTMLInputElement>) {
+  //   const city = event.target.value;
+
+  //   // state 不可变数据
+  //   if (selectedCityList.includes(city)) {
+  //     // 移除
+  //     setSelectedCityList(
+  //       selectedCityList.filter((c) => {
+  //         if (c === city) return false;
+  //         return true;
+  //       })
+  //     );
+  //   } else {
+  //     // 添加
+  //     setSelectedCityList(selectedCityList.concat(city));
+  //   }
+  // }
 
   return (
     <>
-      <input value={text} onChange={handleChange} />
+      {/* <input value={text} onChange={handleChange} /> */}
 
-      <textarea value={text} onChange={handleTextChange}></textarea>
-      <p dangerouslySetInnerHTML={genHtml()}></p>
+      {/* <textarea value={text} onChange={handleTextChange}></textarea>
+      <p dangerouslySetInnerHTML={genHtml()}></p> */}
 
-      <select value={lang} onChange={handleSelectChange}>
+      {/* <select value={lang} onChange={handleSelectChange}>
         <option value="java">Java</option>
         <option value="js">JS</option>
         <option value="css">CSS</option>
-      </select>
+      </select> */}
 
-      <label htmlFor="checkbox1">选中</label>
+      {/* <label htmlFor="checkbox1">选中</label>
       <input
         type="checkbox"
         id="checkbox1"
         checked={checked}
         onChange={toggleChecked}
-      />
+      /> */}
 
-      <label htmlFor="checkbox1">北京</label>
+      {/* <label htmlFor="checkbox1">北京</label>
       <input
         type="checkbox"
         id="checkbox1"
@@ -102,16 +104,16 @@ const Demo: FC = () => {
         type="hidden"
         name="cities"
         value={JSON.stringify(selectedCityList)}
-      />
+      /> */}
 
-      {/* <form action="/api/post" onSubmit={handleSubmit}>
-        <input name="k1" value="v1" />
+      <form action="/api/post" onSubmit={handleSubmit}>
+        <input name="k1" value="v1"/>
         <br />
-        <textarea name="k2" value="v2" />
+        <textarea name="k2" value="v2"/>
         <br />
-        <input type="hidden" name="k3" value="v3" />
+        <input type="hidden" name="k3" value="v3"/>
         <button type="submit">提交</button>
-      </form> */}
+      </form>
 
       {/* <label htmlFor="radio1">男</label>
       <input

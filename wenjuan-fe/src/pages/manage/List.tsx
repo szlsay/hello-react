@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
-import { Typography, Spin, Empty } from 'antd'
-import { useTitle, useDebounceFn, useRequest } from 'ahooks'
+import { Typography, Spin, Empty } from "antd";
+import { useTitle, useDebounceFn, useRequest } from "ahooks";
 import QuestionCard from "../../components/QuestionCard";
+import ListSearch from "../../components/ListSearch";
 import styles from "./common.module.scss";
 
 const { Title } = Typography;
@@ -42,7 +43,7 @@ const rawList = [
 ];
 
 const List: FC = () => {
-  useTitle('我的问卷')
+  useTitle("我的问卷");
   const [list, setList] = useState(rawList);
   return (
     <>
@@ -50,7 +51,9 @@ const List: FC = () => {
         <div className={styles.left}>
           <Title level={3}>我的问卷</Title>
         </div>
-        <div className={styles.right}></div>
+        <div className={styles.right}>
+          <ListSearch />
+        </div>
       </div>
       <div className={styles.content}>
         {/* 问卷列表 */}

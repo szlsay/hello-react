@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { useTitle } from "ahooks";
 import { Typography, Empty, Spin } from "antd";
-
+import ListSearch from "../../components/ListSearch";
 import styles from "./common.module.scss";
 import QuestionCard from "../../components/QuestionCard";
 
@@ -49,7 +49,10 @@ const Star: FC = () => {
         <div className={styles.left}>
           <Title level={3}>星标问卷</Title>
         </div>
-        <div className={styles.right}></div>
+        <div className={styles.right}>
+
+        <ListSearch />
+        </div>
       </div>
       <div className={styles.content}>
         {list.length === 0 && <Empty description="暂无数据" />}

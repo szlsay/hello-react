@@ -1,20 +1,26 @@
 import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
+import { Layout, Spin } from "antd";
 import styles from "./MainLayout.module.scss";
+
+const { Header, Content, Footer } = Layout;
+
 const MainLayout: FC = () => {
   return (
-    <div>
-      <div className={styles.header}>
-        <div className={styles.left}> MainLayout</div>
+    <Layout>
+      <Header className={styles.header}>
+        <div className={styles.left}></div>
         <div className={styles.right}></div>
-      </div>
-      <div className={styles.main}>
-        <div>
+      </Header>
+      <Layout className={styles.main}>
+        <Content>
           <Outlet />
-        </div>
-      </div>
-      <div className={styles.footer}></div>
-    </div>
+        </Content>
+      </Layout>
+      <Footer className={styles.footer}>
+        ST问卷 &copy;2023 - present. Created by ST
+      </Footer>
+    </Layout>
   );
 };
 

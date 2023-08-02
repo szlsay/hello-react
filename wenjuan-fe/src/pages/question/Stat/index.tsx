@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import useLoadQuestionData from "../../../hooks/useLoadQuestionData";
 
 const Stat: FC = () => {
-  return (
-    <></>
-  )
-}
+  const { loading, questionData } = useLoadQuestionData();
+  return <>{questionData}</>;
+};
 
-export default Stat
+export default Stat;

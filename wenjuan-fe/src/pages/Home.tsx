@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Typography } from 'antd'
 import { MANAGE_INDEX_PATHNAME } from '../router'
@@ -14,20 +14,14 @@ const Home: FC = () => {
 
   // useEffect(() => {
   //   // fetch('/api/test')
-  //   //   .then(res => res.json())
+  //   //   .then(res => console.log(res.json()))
   //   //   .then(data => console.log('fetch data', data))
   //   // mock.js 只能劫持 XMLHttpRequest ，不能劫持 fetch
 
   //   // axios 内部使用 XMLHttpRequest API ，没用 fetch
-  //   axios.get('/api/test').then(res => console.log('axios data', res.data))
+  //   // axios.get('/api/test').then(res => console.log('axios data', res.data))
   // }, [])
 
-  // useEffect(() => {
-  //   // fetch('/api/test')
-  //   //   .then(res => res.json())
-  //   //   .then(data => console.log('fetch data', data))
-  //   // axios.get('/api/test').then(res => console.log('axios data', res.data))
-  // })
 
   // function clickHandler() {
   //   // nav('/login')

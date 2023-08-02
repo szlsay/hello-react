@@ -3,8 +3,8 @@ import { FC, useEffect } from "react";
 import useLoadQuestionData from "../../../hooks/useLoadQuestionData";
 
 const Edit: FC = () => {
-  const { loading, questionData } = useLoadQuestionData();
-  return <>{JSON.stringify(questionData)}</>;
+  const { loading, data, error } = useLoadQuestionData();
+  return <>{JSON.stringify(data)}</>;
 };
 
 export default Edit;

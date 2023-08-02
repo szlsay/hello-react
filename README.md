@@ -1,6 +1,9 @@
 # hello-react
 前端框架的核心价值: 组件化 和 数据驱动视图
 
+## mock
+npm init -y
+
 ## 3、Hooks
 ### useState
 

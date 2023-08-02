@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 import styles from "./MainLayout.module.scss";
 const MainLayout: FC = () => {
   return (
     <div>
       <div className={styles.header}>
-        <div className={styles.left}></div>
+        <div className={styles.left}> MainLayout</div>
         <div className={styles.right}></div>
       </div>
       <div className={styles.main}>
@@ -13,9 +13,7 @@ const MainLayout: FC = () => {
           <Outlet />
         </div>
       </div>
-      <div className={styles.footer}>
-        
-      </div>
+      <div className={styles.footer}></div>
     </div>
   );
 };

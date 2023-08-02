@@ -1,6 +1,10 @@
 import { FC, useState } from "react";
+import { Typography, Spin, Empty } from 'antd'
+import { useTitle, useDebounceFn, useRequest } from 'ahooks'
 import QuestionCard from "../../components/QuestionCard";
-import styles from "./List.module.scss";
+import styles from "./common.module.scss";
+
+const { Title } = Typography;
 
 const rawList = [
   {
@@ -38,24 +42,25 @@ const rawList = [
 ];
 
 const List: FC = () => {
+  useTitle('我的问卷')
   const [list, setList] = useState(rawList);
   return (
     <>
       <div className={styles.header}>
         <div className={styles.left}>
-          <h3>左边</h3>
+          <Title level={3}>我的问卷</Title>
         </div>
-        <div className={styles.right}>搜索</div>
+        <div className={styles.right}></div>
       </div>
       <div className={styles.content}>
-        列表
-        {list.map((item) => {
-          // return <div>{JSON.stringify(item)}</div>;
-          return <QuestionCard key={item._id} {...item}></QuestionCard>;
-        })}
+        {/* 问卷列表 */}
+        {list.length > 0 &&
+          list.map((q: any) => {
+            const { _id } = q;
+            return <QuestionCard key={_id} {...q} />;
+          })}
       </div>
-      <div className={styles.footer}>底部</div>
-      {/* <QuestionCard></QuestionCard> */}
+      <div className={styles.footer}></div>
     </>
   );
 };

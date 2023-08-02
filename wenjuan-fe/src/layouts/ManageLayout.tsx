@@ -15,7 +15,6 @@ const ManageLayout: FC = () => {
   const { pathname } = useLocation();
   return (
     <div className={styles.container}>
-      {pathname}
       <div className={styles.left}>
         <Space direction="vertical">
           <Button type="primary" size="large" icon={<PlusOutlined />}>

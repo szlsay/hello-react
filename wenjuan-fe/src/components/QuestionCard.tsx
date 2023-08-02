@@ -73,11 +73,10 @@ const QuestionCard: FC<PropsType> = (props: PropsType) => {
   // )
 
   function del() {
-    // confirm({
-    //   title: '确定删除该问卷？',
-    //   icon: <ExclamationCircleOutlined />,
-    //   onOk: deleteQuestion,
-    // })
+    confirm({
+      title: '确定删除该问卷？',
+      icon: <ExclamationCircleOutlined />
+    })
   }
 
   // 已经删除的问卷，不要再渲染卡片了

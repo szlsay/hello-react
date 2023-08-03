@@ -1,12 +1,8 @@
-import FormElemsDemo from "./FormElemsDemo";
-import ReactHookFormDemo from "./ReactHookFormDemo";
-import FormikDemo from "./FormikDemo";
+import ContextDemo from "./ContextDemo"
 export default function App() {
   return (
     <div>
-      {/* <FormElemsDemo></FormElemsDemo> */}
-      {/* <ReactHookFormDemo></ReactHookFormDemo> */}
-      <FormikDemo></FormikDemo>
+      <ContextDemo></ContextDemo>
     </div>
   );
 }

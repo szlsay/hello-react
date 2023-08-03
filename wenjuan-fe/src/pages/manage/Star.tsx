@@ -3,7 +3,7 @@ import { useTitle } from 'ahooks'
 import { Typography, Empty, Spin } from 'antd'
 import QuestionCard from '../../components/QuestionCard'
 import ListSearch from '../../components/ListSearch'
-// import ListPage from '../../components/ListPage'
+import ListPage from '../../components/ListPage'
 import useLoadQuestionListData from '../../hooks/useLoadQuestionListData'
 import styles from './common.module.scss'
 
@@ -39,7 +39,7 @@ const Star: FC = () => {
           })}
       </div>
       <div className={styles.footer}>
-        {/* <ListPage total={total} /> */}
+        <ListPage total={total} />
       </div>
     </>
   )

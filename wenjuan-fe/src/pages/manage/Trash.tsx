@@ -4,7 +4,7 @@ import { Typography, Empty, Table, Tag, Button, Space, Modal, Spin, message } fr
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { useRequest } from 'ahooks'
 import ListSearch from '../../components/ListSearch'
-// import ListPage from '../../components/ListPage'
+import ListPage from '../../components/ListPage'
 import useLoadQuestionListData from '../../hooks/useLoadQuestionListData'
 import { updateQuestionService, deleteQuestionsService } from '../../services/question'
 import styles from './common.module.scss'
@@ -13,7 +13,7 @@ const { Title } = Typography
 const { confirm } = Modal
 
 const Trash: FC = () => {
-  useTitle('小慕问卷 - 回收站')
+  useTitle('回收站')
 
   const { data = {}, loading, refresh } = useLoadQuestionListData({ isDeleted: true })
   const { list = [], total = 0 } = data
@@ -134,7 +134,7 @@ const Trash: FC = () => {
         {list.length > 0 && TableElem}
       </div>
       <div className={styles.footer}>
-        {/* <ListPage total={total} /> */}
+        <ListPage total={total} />
       </div>
     </>
   )

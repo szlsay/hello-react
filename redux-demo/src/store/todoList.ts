@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { nanoid } from 'nanoid'
-import {produce} from 'immer'
+import { produce } from 'immer'
 
 export type TodoItemType = {
     id: string

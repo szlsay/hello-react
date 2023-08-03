@@ -4,6 +4,7 @@
     "craco",
     "Elems",
     "immer",
-    "mockjs"
+    "mockjs",
+    "undoable"
   ]
 }

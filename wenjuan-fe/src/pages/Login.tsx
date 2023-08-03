@@ -4,8 +4,8 @@ import { Typography, Space, Form, Input, Button, Checkbox, message } from 'antd'
 import { UserAddOutlined } from '@ant-design/icons'
 import { useRequest } from 'ahooks'
 import { REGISTER_PATHNAME, MANAGE_INDEX_PATHNAME } from '../router'
-// import { loginService } from '../services/user'
-// import { setToken } from '../utils/user-token'
+import { loginService } from '../services/user'
+import { setToken } from '../utils/user-token'
 import styles from './Login.module.scss'
 
 const { Title } = Typography
@@ -38,30 +38,29 @@ const Login: FC = () => {
   useEffect(() => {
     const { username, password } = getUserInfoFromStorage()
     form.setFieldsValue({ username, password })
-  }, [form])
+  }, [])
 
-  // const { run } = useRequest(
-  //   async (username: string, password: string) => {
-  //     const data = await loginService(username, password)
-  //     return data
-  //   },
-  //   {
-  //     manual: true,
-  //     onSuccess(result) {
-  //       const { token = '' } = result
-  //       setToken(token) // 存储 token
+  const { run } = useRequest(
+    async (username: string, password: string) => {
+      const data = await loginService(username, password)
+      return data
+    },
+    {
+      manual: true,
+      onSuccess(result) {
+        const { token = '' } = result
+        setToken(token) // 存储 token
 
-  //       message.success('登录成功')
-  //       nav(MANAGE_INDEX_PATHNAME) // 导航到“我的问卷”
-  //     },
-  //   }
-  // )
+        message.success('登录成功')
+        nav(MANAGE_INDEX_PATHNAME) // 导航到“我的问卷”
+      },
+    }
+  )
 
   const onFinish = (values: any) => {
-    console.log(values)
     const { username, password, remember } = values || {}
 
-    // run(username, password) // 执行 ajax
+    run(username, password) // 执行 ajax
 
     if (remember) {
       rememberUser(username, password)
